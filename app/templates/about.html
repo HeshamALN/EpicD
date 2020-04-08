@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %} About {% endblock %}
+
+{% block css %}
+{% load static %}
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'app/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="{%static 'app/css/animate.css' %}" rel="stylesheet">
+        <link href="{% static 'app/vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="{%static 'app/css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}"/>
+{% endblock %}
+{% block  body  %}
+{% load static %}
+<!--========== PAGE LAYOUT ==========-->
+
+        <!-- Slider -->
+        <div class="bg-color-sky-light">
+            <div class="content-md container">
+
+                <img width="720px" height="405px" class="img-responsive" src="https://bootstrapshuffle.com/placeholder/pictures/bg_16-9.svg?primary=007bff" alt="Slider Image">
+            </div>
+        </div>
+        <!-- End Slider -->
+
+        <!-- Features -->
+        <div class="section-seperator">
+            <div class="content-md container">
+                 <div class="section-seperator">
+            <div class="content-md container">
+                <div class="row">
+                    <div class="col-sm-4 sm-margin-b-50">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                            <h3>Art Of Coding</h3>
+                            <p>Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding</p>
+                            <a class="link" href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 sm-margin-b-50">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
+                            <h3>Art Of Coding</h3>
+                            <p>Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding</p>
+                            <a class="link" href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
+                            <h3>Art Of Coding</h3>
+                            <p>Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding Art Of Coding</p>
+                            <a class="link" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+                <!--// end row -->
+            </div>
+        </div>
+        <!-- End Features -->
+
+        <!-- About -->
+        <div class="content-md container">
+            <div class="row margin-b-20">
+                <div class="col-sm-6">
+                    <h2>-----</h2>
+                </div>
+            </div>
+            <!--// end row -->
+
+            <div class="row">
+                <div class="col-sm-7 sm-margin-b-50">
+                    <div class="margin-b-30">
+                        <p>-----</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-sm-offset-1">
+                    <img width="220px" height="130px"class="img-responsive" src="https://bootstrapshuffle.com/placeholder/pictures/bg_16-9.svg?primary=007bff" alt="Image">
+                </div>
+            </div>
+            <!--// end row -->
+        </div>
+        <!-- End About -->
+
+
+
+
+            </div>
+        </div>
+        <!-- End Clients -->
+        <!--========== END PAGE LAYOUT ==========--> {% endblock %}

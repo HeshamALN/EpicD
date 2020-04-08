@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Instagram {% endblock %}
+
+{% block css %}
+{% load static %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'app/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="{% static 'app/vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="{% static 'app/css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}"/>
+
+{% endblock %}
+{% block  body  %}
+{% load static %}
+<!--========== PAGE LAYOUT ==========-->
+        <!-- instafeed -->
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-3870267a-b746-4aa2-902b-b56e4755dcc6"></div>
+                        <!-- End instafeed -->
+                    </div>
+                </div>
+                <!-- End Masonry Grid -->
+            </div>
+        </div>
+        <!-- End Work -->
+
+
+        <!--========== END PAGE LAYOUT ==========-->
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}  {% endblock %}
+
+{% block css %}
+                        <style>
+                                .container{
+                                     padding-top: 15px;
+                                }
+
+                            #question{
+                                margin-left: 70px;
+                                text-align: left;
+                                }
+
+                            #id_message{
+                                width:100%
+                                }
+
+                            #id_email{
+                                width:100%
+                                }
+                        </style>
+
+{% load static %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'app/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- THEME STYLES -->
+        <link href="{% static 'app/css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}"/>
+{% endblock %}
+{% block  body  %}
+{% load static %}
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                                        <form action="" method="POST" id="fit-test">
+
+                                        <h4>Question <span id="current-question"></span> of 5</h4>
+
+                                        
+                                        <!-- ************************* question 1 ************************* -->
+
+                                        <div class="fit-test__question-container" data-question-num="2">
+                                          <p id="question" class="fit-test__question">Question 1: What is the answer?</p>
+                                          <div class="fit-test__answer-container">
+                                            <div class="fit-test__answer-option">
+                                              <div class="fit-test__answer-letter">A</div>
+                                              <p>All</p>
+                                            </div>
+                                            <div class="fit-test__answer-option">
+                                              <div class="fit-test__answer-letter">B</div>
+                                              <p>Some</p>
+                                            </div>
+                                            <div class="fit-test__answer-option">
+                                              <div class="fit-test__answer-letter">C</div>
+                                              <p>A little</p>
+                                            </div>
+                                            <div class="fit-test__answer-option">
+                                              <div class="fit-test__answer-letter">D</div>
+                                              <p>Nothing</p>
+                                            </div>
+                                          </div><!-- end .fit-test__answer-container -->
+                                        </div><!-- end .fit-test__question-container -->
+
+
+                                        <div id="fit-test__restart-btn" class="button">Restart</div>
+
+                                        <div class="fit-test__progress-bar">
+                                          <!--<span class="fit-test__progress-bar__label">Progress</span>-->
+                                          <div id="fit-test__progress-bar__bar"></div>
+                                        </div>
+
+                                        <div id="fit-test__back-btn" class="button">Back</div>
+                                      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

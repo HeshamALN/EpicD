@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <!-- BEGIN HEAD -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% block title %} {% endblock %}</title>
+
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        {% block css %}{% endblock %}
+    </head>
+    <!-- END HEAD -->
+
+    <!-- BODY -->
+    <body>
+<div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+
+        <!--========== HEADER ==========-->
+        <header class="header">
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="menu-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
+
+                        <!-- Logo -->
+                        <div class="navbar-logo">
+                            <a class="navbar-logo-wrap" href="/">
+
+                                <img class="navbar-logo-img" src="{% static 'app/img/logo.png' %}" alt="EpicDesign Logo">
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                    </div>
+
+                    <div class="collapse navbar-collapse nav-collapse">
+                        <div class="menu-container">
+                            <ul class="navbar-nav navbar-nav-right">
+                                <!-- Home -->
+<!--                                 <li class="nav-item">
+                                    <a class="nav-item-child active" href="/">
+                                        Home
+                                    </a>
+                                </li>
+                                 End Home --> 
+                                <!-- How it works -->
+                                <li class="nav-item">
+                                    <a class="nav-item-child" href="/howItWorks">
+                                        How it works
+                                    </a>
+                                </li>
+                                <!-- End How it works -->
+
+
+                                 <!-- Work -->
+                                <li class="nav-item">
+                                    <a class="nav-item-child" href="/plans">
+                                        Our plans
+                                    </a>
+                                </li>
+                                <!-- End Work -->
+
+                                <!-- About -->
+                                <li class="nav-item">
+                                    <a class="nav-item-child" href="/about">
+                                        About Us
+                                    </a>
+                                </li>
+                                <!-- End About -->
+
+                                <!-- Work -->
+                                <li class="nav-item">
+                                    <a class="nav-item-child" href="/instagram">
+                                        instagram
+                                    </a>
+                                </li>
+                                <!-- End Work -->
+
+                                <!-- Contact -->
+                                <li class="nav-item">
+                                    <a class="nav-item-child" href="/contact">
+                                        Contact us
+                                    </a>
+                                </li>
+                                <!-- End Contact -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Navbar Collapse -->
+                </div>
+            </nav>
+            <!-- Navbar -->
+        </header>
+        <!--========== END HEADER ==========-->
+
+
+        {% if messages %}
+            {% for message in messages %}
+        <br>
+        <br>
+        <br>
+                   <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+            {% endfor %}
+        {% endif %}
+
+    {% block body  %}
+
+
+
+        {% endblock %}
+
+    <!--========== FOOTER ==========-->
+        <footer class="footer">
+                            <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+            <!-- Links -->
+            <div class="section-seperator">
+                <div class="content-md container">
+                    <div class="row">
+                        <div class="col-sm-2 sm-margin-b-30">
+                            <!-- List -->
+                            <ul class="list-unstyled footer-list">
+                                <li class="footer-list-item"><a href="/">Home</a></li>
+                                <li class="footer-list-item"><a href="/about">About</a></li>
+                                <li class="footer-list-item"><a href="/instagram">Instagram</a></li>
+                                <li class="footer-list-item"><a href="/contact">Contact</a></li>
+                            </ul>
+                            <!-- End List -->
+                        </div>
+                        <div class="col-sm-2 sm-margin-b-30">
+                            <!-- List -->
+<!--                            <ul class="list-unstyled footer-list">-->
+<!--                                <li class="footer-list-item"><a href="http://keenthemes.com/">Twitter</a></li>-->
+<!--                                <li class="footer-list-item"><a href="http://keenthemes.com/">Facebook</a></li>-->
+<!--                                <li class="footer-list-item"><a href="http://keenthemes.com/">Instagram</a></li>-->
+<!--                                <li class="footer-list-item"><a href="http://keenthemes.com/">YouTube</a></li>-->
+<!--                            </ul>-->
+                            <!-- End List -->
+                        </div>
+
+                    </div>
+                    <!--// end row -->
+                </div>
+            </div>
+            <!-- End Links -->
+
+
+
+
+                        <!-- Logo -->
+<!--                         <div class="navbar-logo">
+                            <a class="navbar-logo-wrap" href="/">
+
+                                <img class="navbar-logo-img" src="{% static 'app/img/logo.png' %}" alt="EpicDesign Logo">
+                            </a>
+                        </div> -->
+                        <!-- End Logo -->
+                </div>
+            </nav>
+            <!-- Navbar -->
+
+        </footer>
+        <!--========== END FOOTER ==========-->
+
+        <!-- Back To Top -->
+        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+        <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- CORE PLUGINS -->
+        <script src="{% static 'app/vendor/jquery.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'app/vendor/jquery-migrate.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'app/vendor/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL PLUGINS -->
+        <script src="{%static 'app/vendor/jquery.easing.js' %}" type="text/javascript"></script>
+        <script src="{%static 'app/vendor/jquery.back-to-top.js' %}" type="text/javascript"></script>
+        <script src="{%static 'app/vendor/jquery.smooth-scroll.js' %}" type="text/javascript"></script>
+        <script src="{%static 'app/vendor/jquery.wow.min.js' %}" type="text/javascript"></script>
+        <script src="{%static 'app/vendor/swiper/js/swiper.jquery.min.js' %}" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL SCRIPTS -->
+        <script src="{%static 'app/js/layout.min.js' %}" type="text/javascript"></script>
+        <script src="{%static 'app/js/components/wow.min.js' %}" type="text/javascript"></script>
+        <script src="{%static 'app/js/components/swiper.min.js' %}" type="text/javascript"></script>
+</div>
+    </body>
+    <!-- END BODY -->
+</html>

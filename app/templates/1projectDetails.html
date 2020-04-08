@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %} EpicDesign {% endblock %}
+
+{% block css %}
+{% load static %}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'app/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="{% static 'app/css/animate.css' %}" rel="stylesheet">
+        <link href="{% static 'app/vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="{% static 'app/css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}"/>
+
+{% endblock %}
+{% block  body  %}
+{% load static %}
+<!--========== PAGE LAYOUT ==========-->
+<!-- Page Content -->
+
+
+
+    <div class="container">
+
+
+
+
+     <!-- Page Content -->
+<div class="container">
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4"> {{project.project_name}}
+    <small></small>
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img width="750px" height="500px"  class="img-fluid" src={{project.project_image.url}} alt="">
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">{{project.name}}</h3>
+      <p>{{project.description|linebreaks}}</p>
+      <h1 class="my-3">Project Details</h1>
+
+      <ul>
+         <li>Project Area</li>
+        <li>{{project.project_area}}</li>       
+      </ul>
+        <ul>
+          <li>Project location</li>
+        <li>{{project.project_location}}</li>       
+      </ul>
+      <ul>
+        <li>Task</li>
+        <li>{{project.task_choices}}</li>       
+      </ul>
+
+    </div>
+{% if project.project_image1 %}
+    <div class="col-md-8">
+    <br>
+      <img width="750px" height="500px"  class="img-fluid" src={{project.project_image1.url}} alt="">
+    </div>
+              {% endif %}
+
+
+{% if project.project_image2  %}
+  <div class="col-md-8">
+    <br>
+      <img width="750px" height="500px"  class="img-fluid" src={{project.project_image2.url}} alt="">
+    </div>
+  </div>
+            {% endif %}
+
+{% if project.project_image3  %}
+  <div class="col-md-8">
+    <br>
+      <img width="750px" height="500px"  class="img-fluid" src={{project.project_image3.url}} alt="">
+    </div>
+  </div>
+        {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %} Plans {% endblock %}
+
+{% block css %}
+
+<style >
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 33%;
+}
+
+
+</style>
+{% load static %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'app/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="{% static 'app/vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="{% static 'app/css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}"/>
+
+{% endblock %}
+{% block  body  %}
+{% load static %}
+<div class="container">
+      <section class="py-5">
+        <div class="img-wrapper">
+          <img class="img-responsive" src="https://bootstrapshuffle.com/placeholder/pictures/bg_16-9.svg?primary=007bff" alt="">
+            <div class="img-overlay">
+            <h3 class="card-title">Future of the Internet</h3>
+
+            <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">Open Plans</button>
+            </div>
+            </div>
+        </div>
+      </section>
+
+
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <embed src="{% static 'app/pdf/PORTFOLIO.pdf' %}"
+                               frameborder="0" width="100%" height="700px">
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

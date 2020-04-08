@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact Us {% endblock %}
+
+{% block css %}
+                        <style>
+                                .container{
+                                     padding-top: 15px;
+                                }
+
+                            #id_name{
+                                width:100%
+                                }
+
+                            #id_message{
+                                width:100%
+                                }
+
+                            #id_email{
+                                width:100%
+                                }
+                        </style>
+
+{% load static %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'app/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- THEME STYLES -->
+        <link href="{% static 'app/css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}"/>
+{% endblock %}
+{% block  body  %}
+{% load static %}
+<!--========== PAGE LAYOUT ==========-->
+        <!-- Google Map -->
+
+        <!-- Contact List -->
+        </br>
+        <div class="section-seperator">
+            <div class="content-md container">
+                <div class="row">
+
+                    <!-- Contact List -->
+                    <div class="col-sm-4 sm-margin-b-50">
+                        <h4> <span class="text-uppercase margin-l-20">Operation</span></h4>
+                        <ul class="list-unstyled contact-list">
+                            <li><i class="margin-r-10 color-base icon-call-out"> </i><a href="tel:0096569997616">+965 69997616</a></li>
+                            <li><i class="margin-r-10 fa fa-whatsapp" style="color:#D12A17"> </i> <a href="https://wa.me/0096569997616">Click Here</a></li>
+                            <li><i class="margin-r-10 color-base icon-envelope"> </i><a href="mailto: operation@acidus.com">operation@acidus.com</a></li>
+                            <li><i class="margin-r-10 color-base fa fa-instagram"> </i><a href="https://www.instagram.com/epic.kuwait/">@epic.kuwait</a></li>
+
+                            <li><i class="margin-r-10 color-base icon-compass"> </i><a href="https://www.google.com/maps/place/Al+Madinah+Tower,+42+Fahad+Al-Salem+Street,+Al+Kuwayt/@29.3686113,47.9676529,17z/data=!3m1!4b1!4m5!3m4!1s0x3fcf84e79233537f:0x545adc2f35261121!8m2!3d29.3686113!4d47.9698416">Click here for location</a> </li>
+                        </ul>
+                    </div>
+                      <div class="col-sm-4 col-sm-offset-1">
+                    <img class="img-responsive" src="https://bootstrapshuffle.com/placeholder/pictures/bg_16-9.svg?primary=007bff" alt="Image">
+                </div>
+                    <!-- End Contact List -->
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+        <!-- End Contact List -->
+
+        <!-- Comment -->
+        <div class="section-seperator">
+            <div class="content-md container">
+                <div class="row margin-b-40">
+                    <div class="col-sm-6">
+                        <h2>Send Us A Note</h2>
+                    </div>
+                </div>
+                <!--// end row -->
+                <div class="row">
+                    <div class="col-md-5 col-sm-7">
+
+                        <form action="" method="POST">
+                            {% csrf_token %}
+
+                            {% for hidden in form.hidden_fields %}
+                            {{ hidden }}
+                            {% endfor %}
+
+                            {% for field in form.visible_fields %}
+                            <div class="form-group">
+                                {{ field.errors }}
+                                <label>{{ field.label_tag }}</label>
+                                <p>{{ field }}</p>
+                            </div>
+                            {% endfor %}
+                             <button type="submit" class="btn btn-lg btn-danger">Submit</button>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+        <!-- End Comment -->
+        <!--========== END PAGE LAYOUT ==========-->
+{% endblock %}

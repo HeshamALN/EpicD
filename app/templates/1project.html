@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %} EpicDesign {% endblock %}
+
+{% block css %}
+{% load static %}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="{% static 'app/vendor/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="{% static 'app/css/animate.css' %}" rel="stylesheet">
+        <link href="{% static 'app/vendor/swiper/css/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="{% static 'app/css/layout.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'app/favicon.ico' %}"/>
+
+{% endblock %}
+{% block  body  %}
+{% load static %}
+<!--========== PAGE LAYOUT ==========-->
+<!-- Page Content -->
+
+
+
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 class="my-9">Projects
+        <!-- <small>h2 text</small> -->
+      </h1>
+        {% for project in projects %}
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-sm-8">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src={{project.project_image.url}} alt="">
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <h3>{{project.project_name}}</h3>
+          <p>{{project.description|truncatechars:25}}</p>
+          <a class="btn btn-danger" href="{% url 'project-detail' project.id %}">View Project</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+    {% endfor %}
+
+
+      <!-- Pagination -->
+      {% if projects.has_other_pages %}
+        <ul class="pagination">
+          {% if projects.has_previous %}
+            <li><a href="?page={{ projects.previous_page_number }}">&laquo;</a></li>
+          {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+          {% endif %}
+          {% for i in projects.paginator.page_range %}
+            {% if projects.number == i %}
+              <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+              <li><a href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+          {% endfor %}
+          {% if projects.has_next %}
+            <li><a href="?page={{ projects.next_page_number }}">&raquo;</a></li>
+          {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+          {% endif %}
+        </ul>
+      {% endif %}
+
+    </div>
+    <!-- /.container -->
+{% endblock %}
