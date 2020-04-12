@@ -9,7 +9,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 app_name = 'app'
-handler404 = app.views.handler404
+
+# handler404 = 'app.views.handler404'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
