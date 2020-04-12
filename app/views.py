@@ -94,9 +94,5 @@ def emailView(request):
 
 
 
-def error(request):
-    # return HttpResponse("My first APP")
-    context = {
-
-    }
-    return render(request,"404.html", context)
+def handler404(request):
+    return render(request, '404.html', status=404)

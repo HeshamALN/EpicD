@@ -8,8 +8,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 
-
 app_name = 'app'
+handler404 = app.views.handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,11 +24,10 @@ urlpatterns = [
 
 
     path('email/', views.emailView, name='email'),
-
-    path('404/', views.error, name='error'),
-
 ]
 
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
