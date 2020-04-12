@@ -13,7 +13,7 @@ app_name = 'app'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.home, name = "home"),
+    path('/', views.home, name = "home"),
     path('about/',views.about, name = "about"),
     path('instagram/',views.instagram, name = "instagram"),
     path('howItWorks/',views.howItWorks, name = "howItWorks"),
