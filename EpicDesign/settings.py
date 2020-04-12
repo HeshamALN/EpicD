@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n2+^9^5$rmce88v9p_f@la8kq-p)7-^6)v$bn$kd9v77=e10t*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['165.22.64.175']
+ALLOWED_HOSTS = ['167.172.33.60']
 
 
 # Application definition
@@ -78,16 +78,24 @@ WSGI_APPLICATION = 'EpicDesign.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': '89e11dd5581b6dd9d11bd35541c500f2',
-        'HOST': 'localhost',
-        'PORT': '',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'EpicDesign',
+            'USER': 'epic_admin',
+            'PASSWORD': 'admin',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 
 
 # Password validation
